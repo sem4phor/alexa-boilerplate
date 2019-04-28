@@ -1,0 +1,17 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build index.js --target node --bundle-node-modules --out-dir dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk-core": "^2.5.2",
+    "ask-sdk-dynamodb-persistence-adapter": "^2.5.2",
+    "ask-sdk-model": "^1.15.0",
+    "i18next": "^15.1.0"
+  }
+}

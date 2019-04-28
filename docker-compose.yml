@@ -1,0 +1,22 @@
+version: "3.6"
+services:
+  hello-world-watch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/skill
+  hello-world-proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bst proxy lambda lambda/watch/index.js
+    working_dir: /skill
+    ports:
+      - 8080:80
+    volumes:
+      - ./:/skill
+  dynamo-db:
+    image: amazon/dynamodb-local
+    ports:
+      - 8000:8000

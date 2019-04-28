@@ -1,0 +1,5 @@
+lambda/node_modules
+lambda/build
+lambda/watch
+lambda/.cache
+test/unit/coverage

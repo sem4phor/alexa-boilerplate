@@ -1,0 +1,8 @@
+---
+configuration:
+  locale: en-US
+
+---
+- test: "Sequence 01. Test scenario: launch request, no further interaction."
+- LaunchRequest:
+  - response.outputSpeech.ssml: "Hello World!"
