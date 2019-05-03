@@ -13,5 +13,4 @@ WORKDIR /skill
 COPY . .
 EXPOSE 8080
 
-WORKDIR /skill/lambda
-CMD parcel watch lambda/index.js --target node --out-dir lambda/watch
+CMD parcel watch lambda/index.ts --target node --out-dir lambda/parcel

@@ -10,7 +10,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: bst proxy lambda lambda/watch/index.js
+    command: bst proxy lambda lambda/parcel/index.js
     working_dir: /skill
     ports:
       - 8080:80

@@ -2,9 +2,12 @@
   "name": "hello-world",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "build": "parcel build index.js --target node --bundle-node-modules --out-dir dist"
+    "build": "parcel build index.js --target node --bundle-node-modules --out-dir parcel",
+    "lint": "node_modules/.bin/eslint *.ts",
+    "test": "cd .. && bst test",
+    "badge:coverage": "npm run test && jest-coverage-badges input '../test_output/coverage/coverage-summary.json' '../test_output/coverage'"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +16,12 @@
     "ask-sdk-dynamodb-persistence-adapter": "^2.5.2",
     "ask-sdk-model": "^1.15.0",
     "i18next": "^15.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
+    "jest-coverage-badges": "^1.1.2",
+    "typescript": "^3.4.5"
   }
 }

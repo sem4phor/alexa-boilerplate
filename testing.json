@@ -1,0 +1,24 @@
+{
+  "handler": "lambda/parcel/index.js",
+  "locales": "en-US",
+  "html": "false",
+  "address": {
+    "addressLine1": "Bahnhofstraße 15-17",
+    "city": "Wiesbaden",
+    "countryCode": "DE",
+    "postalCode": "65185",
+    "stateOrRegion": "HE"
+  },
+  "dynamo": "mock",
+  "interactionModel": "models/en-US.json",
+  "trace": false,
+  "jest": {
+    "silent": false,
+    "coverageDirectory": "test_output/coverage/",
+    "coverageReporters": [
+      "json-summary", 
+      "text",
+      "lcov"
+    ]
+  }
+}
