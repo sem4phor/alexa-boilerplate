@@ -5,4 +5,4 @@ configuration:
 ---
 - test: "Sequence 01. Test scenario: launch request, no further interaction."
 - LaunchRequest:
-  - response.outputSpeech.ssml: "Hello World!"
+  - response.outputSpeech.ssml: "<speak>Welcome to the Alexa Skills Kit, you can say hello!</speak>"
