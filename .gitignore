@@ -1,5 +1,5 @@
 lambda/node_modules
-lambda/build
-lambda/watch
+lambda/parcel
 lambda/.cache
-test/unit/coverage
+test_output
+bst-debug.log
