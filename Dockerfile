@@ -11,6 +11,8 @@ COPY lambda/package*.json ./
 RUN npm install
 WORKDIR /skill
 COPY . .
+RUN chmod u+x hooks/*.sh
+
 EXPOSE 8080
 
 CMD parcel watch lambda/index.ts --target node --out-dir lambda/parcel
