@@ -1,3 +1,8 @@
+![Coverage Branches](/test_output/coverage/badge-branches.svg)
+![Coverage Function](/test_output/coverage/badge-functions.svg)
+![Coverage Lines](/test_output/coverage/badge-lines.svg)
+![Coverage Statements](/test_output/coverage/badge-statements.svg)
+
 // TODO:
 predeploy hook
   - ask validate
@@ -5,12 +10,8 @@ predeploy hook
   - eslint
   - parcel build
   - covergae badge generieren
-git repo anlegen
 dynamo db anbindung testen (local)
 bst dynamo db mock testen
-husky hooks / lint staged:
-- eslint
-- ask validate (?)
 
 Initial Setup:
 1. Build container:
