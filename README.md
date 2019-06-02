@@ -17,7 +17,7 @@ Initial Setup:
 docker-compose build
 2. Set up ask cli
 docker-compose exec my-container sh
-ask init --no-browser // make run cmd
+ask init --no-browser // change default cmd to this
 follow steps
 
 Development:
