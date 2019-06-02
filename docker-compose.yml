@@ -12,6 +12,8 @@ services:
       dockerfile: Dockerfile
     command: bst proxy lambda lambda/parcel/index.js
     working_dir: /skill
+    environment:
+      ASK_DEFAULT_DEVICE_LOCALE: en_US
     ports:
       - 8080:80
     volumes:
