@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "parcel build index.js --target node --out-dir parcel",
+    "build": "parcel build index.ts --target node --out-dir parcel --bundle-node-modules",
     "lint": "eslint --fix *.ts",
     "test": "cd .. && bst test",
-    "badge:coverage": "npm run test && jest-coverage-badges input '../test_output/coverage/coverage-summary.json' '../badges'"
+    "posttest": "jest-coverage-badges input '../test_output/coverage/coverage-summary.json' '../badges'",
+    "predeploy": "npm run lint && npm run test && npm run build && cd .. && ask validate -l en-US",
+    "deploy": "cd .. && ask deploy"
   },
   "author": "",
   "license": "ISC",
@@ -35,7 +37,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run badge:coverage --"
+      "pre-push": "npm run test"
     }
   },
   "devDependencies": {
