@@ -3,3 +3,4 @@ lambda/parcel
 lambda/.cache
 test_output
 bst-debug.log
+.cache
