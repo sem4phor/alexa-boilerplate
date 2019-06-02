@@ -5,23 +5,41 @@
   "main": "index.ts",
   "scripts": {
     "build": "parcel build index.js --target node --bundle-node-modules --out-dir parcel",
-    "lint": "node_modules/.bin/eslint *.ts",
-    "test": "cd .. && bst test",
+    "lint": "eslint *.ts",
+    "test": "cd .. && bst test -- --passWithNoTests",
     "badge:coverage": "npm run test && jest-coverage-badges input '../test_output/coverage/coverage-summary.json' '../test_output/coverage'"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ask-sdk-core": "^2.5.2",
-    "ask-sdk-dynamodb-persistence-adapter": "^2.5.2",
-    "ask-sdk-model": "^1.15.0",
-    "i18next": "^15.1.0"
+    "ask-sdk-core": "^2.6.0",
+    "ask-sdk-dynamodb-persistence-adapter": "^2.6.0",
+    "ask-sdk-model": "^1.16.0",
+    "i18next": "^15.1.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint --",
+      "npm run test --",
+      "git add"
+    ],
+    "*.json": [
+      "npm run test --",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run badge:coverage --"
+    }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.7.0",
-    "@typescript-eslint/parser": "^1.7.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
     "eslint": "^5.16.0",
+    "husky": "^2.3.0",
     "jest-coverage-badges": "^1.1.2",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.1"
   }
 }
