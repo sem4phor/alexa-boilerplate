@@ -1,9 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
-  "parserOptions": {
-      "project": "lambda/tsconfig.json"
-  },
   "extends": ["plugin:@typescript-eslint/recommended"],
   "env": {
     "node": true
