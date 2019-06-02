@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "parcel build index.js --target node --bundle-node-modules --out-dir parcel",
+    "build": "parcel build index.js --target node --out-dir parcel",
     "lint": "eslint --fix *.ts",
     "test": "cd .. && bst test",
-    "badge:coverage": "npm run test && jest-coverage-badges input '../test_output/coverage/coverage-summary.json' '../test_output/coverage'"
+    "badge:coverage": "npm run test && jest-coverage-badges input '../test_output/coverage/coverage-summary.json' '../badges'"
   },
   "author": "",
   "license": "ISC",

@@ -14,6 +14,7 @@
   "trace": false,
   "jest": {
     "silent": false,
+    "passWithNoTests": true,
     "coverageDirectory": "test_output/coverage/",
     "coverageReporters": [
       "json-summary", 
