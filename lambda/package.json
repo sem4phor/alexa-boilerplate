@@ -5,8 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "build": "parcel build index.js --target node --bundle-node-modules --out-dir parcel",
-    "lint": "eslint *.ts",
-    "test": "cd .. && bst test -- --passWithNoTests",
+    "lint": "eslint --fix *.ts",
+    "test": "cd .. && bst test",
     "badge:coverage": "npm run test && jest-coverage-badges input '../test_output/coverage/coverage-summary.json' '../test_output/coverage'"
   },
   "author": "",
@@ -15,16 +15,20 @@
     "ask-sdk-core": "^2.6.0",
     "ask-sdk-dynamodb-persistence-adapter": "^2.6.0",
     "ask-sdk-model": "^1.16.0",
-    "i18next": "^15.1.3"
+    "i18next": "^15.1.3",
+    "install": "^0.12.2",
+    "npm": "^6.9.0"
   },
   "lint-staged": {
-    "*.ts": [
+    "*.{ts,js}": [
       "npm run lint --",
       "npm run test --",
+      "ask validate",
       "git add"
     ],
     "*.json": [
       "npm run test --",
+      "ask validate",
       "git add"
     ]
   },
@@ -40,6 +44,7 @@
     "eslint": "^5.16.0",
     "husky": "^2.3.0",
     "jest-coverage-badges": "^1.1.2",
+    "lint-staged": "^8.1.7",
     "typescript": "^3.5.1"
   }
 }
