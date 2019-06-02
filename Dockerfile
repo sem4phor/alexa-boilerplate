@@ -2,6 +2,7 @@ FROM node:8.10-alpine
 
 ENV NODE_ENV=development
 
+RUN apk add --no-cache bash
 RUN npm i -g ask-cli
 RUN npm i -g parcel
 RUN npm i -g bespoken-tools
