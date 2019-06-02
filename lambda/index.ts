@@ -86,6 +86,8 @@ const SessionEndedRequestHandler: RequestHandler = {
 
 const ErrorHandler: ErrorHandler = {
     canHandle(handlerInput: HandlerInput, error: Error ): boolean {
+        console.log(handlerInput)
+        console.log(error)
         return true
     },
     handle(handlerInput: HandlerInput, error: Error): Response {
@@ -99,12 +101,12 @@ const ErrorHandler: ErrorHandler = {
 }
 
 export const handler = SkillBuilders.custom()
-  .addRequestHandlers(
-    LaunchRequestHandler,
-    HelloWorldIntentHandler,
-    HelpIntentHandler,
-    CancelAndStopIntentHandler,
-    SessionEndedRequestHandler,
-  )
-  .addErrorHandlers(ErrorHandler)
-  .lambda()
+    .addRequestHandlers(
+        LaunchRequestHandler,
+        HelloWorldIntentHandler,
+        HelpIntentHandler,
+        CancelAndStopIntentHandler,
+        SessionEndedRequestHandler,
+    )
+    .addErrorHandlers(ErrorHandler)
+    .lambda()
