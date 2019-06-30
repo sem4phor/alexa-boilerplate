@@ -33,5 +33,7 @@ Development:
 docker-compose up to start parcel, bst proxy and dynamodb
 
 Deploy:
-// TODO
-docker run parcel build && ask deploy env=prod
+From outside the running container:
+`docker-compose exec -w /skill/lambda hello-world-proxy npm run deploy`
+From inside:
+`cd lambda && npm run deploy`
