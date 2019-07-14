@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "parcel build index.ts --target node --out-dir parcel --bundle-node-modules",
+    "start": "npm run watch & npm run proxy",
+    "bst": "NODE_ENV=development bst",
+    "proxy": "NODE_ENV=development bst proxy lambda dist/index.js",
+    "watch": "parcel watch index.ts --target node",
+    "build": "NODE_ENV=production parcel build index.ts --target node --bundle-node-modules",
     "lint": "eslint --fix *.ts",
-    "test": "cd .. && bst test",
+    "test": "cd .. && NODE_ENV=development bst test",
     "posttest": "jest-coverage-badges input '../test_output/coverage/coverage-summary.json' '../badges'",
-    "predeploy": "npm run lint && npm run test && npm run build && cd .. && ask validate -l en-US",
-    "deploy": "NODE_ENV=production cd .. && ask deploy"
+    "predeploy": "npm run lint && npm run test && npm run build",
+    "deploy": "cd ..&& ask validate -l en-USask deploy"
   },
   "author": "",
   "license": "ISC",
@@ -17,20 +21,18 @@
     "ask-sdk-core": "^2.6.0",
     "ask-sdk-dynamodb-persistence-adapter": "^2.6.0",
     "ask-sdk-model": "^1.17.0",
+    "aws-sdk": "^2.493.0",
     "i18next": "^17.0.4",
-    "install": "^0.12.2",
-    "npm": "^6.9.2"
+    "install": "^0.12.2"
   },
   "lint-staged": {
     "*.{ts,js}": [
       "npm run lint --",
       "npm run test --",
-      "ask validate",
       "git add"
     ],
     "*.json": [
       "npm run test --",
-      "ask validate",
       "git add"
     ]
   },
@@ -41,12 +43,18 @@
     }
   },
   "devDependencies": {
+    "@types/node": "^12.6.2",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
+    "ask-cli": "^1.7.7",
+    "bespoken-tools": "^2.3.26",
     "eslint": "^6.0.1",
     "husky": "^2.7.0",
+    "i": "^0.3.6",
     "jest-coverage-badges": "^1.1.2",
     "lint-staged": "^8.2.1",
+    "npm": "^6.10.1",
+    "parcel-bundler": "^1.12.3",
     "typescript": "^3.5.2"
   }
 }

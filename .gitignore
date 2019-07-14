@@ -1,5 +1,5 @@
 lambda/node_modules
-lambda/parcel
+lambda/dist
 lambda/.cache
 test_output
 bst-debug.log

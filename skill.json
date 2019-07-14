@@ -21,7 +21,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "./lambda/parcel",
+          "sourceDir": "./lambda/dist",
           "uri": "ask-custom-hello-world-default"
         }
       }

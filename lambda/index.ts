@@ -8,12 +8,47 @@ import {
     Response,
     SessionEndedRequest,
 } from 'ask-sdk-model'
+import {
+    DynamoDbPersistenceAdapter
+} from 'ask-sdk-dynamodb-persistence-adapter'
+import AWS from 'aws-sdk'
+
+let dynamoDBClient = undefined
+if (process.env.NODE_ENV === 'development') {
+    AWS.config.update({
+        region: 'us-east-1'
+    })
+    console.log('### Using Local Dynamo DB ###')
+    dynamoDBClient = new AWS.DynamoDB({
+        apiVersion : 'latest',
+        region: 'us-west-2',
+        endpoint: 'http://localhost:8000',
+        accessKeyId: 'fakeMyAccessKeyId',
+        secretAccessKey: 'fakeMyAccessKey'
+    })
+} else {
+    dynamoDBClient = new AWS.DynamoDB({
+        apiVersion : 'latest'
+    })
+}
+
+const persistenceAdapter = new DynamoDbPersistenceAdapter({
+    tableName: 'HelloWorldSessions',
+    createTable: true,
+    dynamoDBClient
+})
 
 const LaunchRequestHandler: RequestHandler = {
     canHandle(handlerInput: HandlerInput): boolean {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest'
     },
-    handle(handlerInput: HandlerInput): Response {
+    async handle(handlerInput: HandlerInput): Promise<Response> {
+        const persistentAttributes = await handlerInput.attributesManager.getPersistentAttributes()
+        console.log(persistentAttributes)
+        persistentAttributes.foo = 'bar'
+        handlerInput.attributesManager.setPersistentAttributes(persistentAttributes)
+  
+        await handlerInput.attributesManager.savePersistentAttributes()
         const speechText = 'Welcome to the Alexa Skills Kit, you can say hello!'
 
         return handlerInput.responseBuilder
@@ -101,6 +136,7 @@ const ErrorHandler: ErrorHandler = {
 }
 
 export const handler = SkillBuilders.custom()
+    .withPersistenceAdapter(persistenceAdapter)
     .addRequestHandlers(
         LaunchRequestHandler,
         HelloWorldIntentHandler,

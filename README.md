@@ -10,30 +10,24 @@ Stack:
 - Tests: bespoken tests
 - DB: DynamoDB
 
-Services:
-- hello-world-watch: Watches code and rebuilds it
-- hello-world-proxy: Local hosted alexa skill; Access within container: e.g. `bst launch`
-- dynamo-db: Test DB; Access on http://alexa.docker:8000/shell/
-
-// TODO:
-dynamo db anbindung testen (local)
-bst dynamo db mock testen
-
-Initial Setup:
-1. Build container:
-docker-compose build
-2. Set up ask cli in container
-docker-compose exec my-container sh
-ask init --no-browser
-follow steps
-configure your skill (skill.json)
-ask deploy
+Dependencies:
+- java (https://java.com/de/download/)
+- dynamo-db local package
+(https://docs.aws.amazon.com/de_de/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
 
 Development:
-docker-compose up to start parcel, bst proxy and dynamodb
+- navigate to your dynamo-db folder
+- `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb` (local dynamo-db)
+- navigate to lambda folder of your project
+- `npm start`
+- Execute your code: `npm run launch` or `npm test`
+
+Initial Setup:
+- configure your skill (skill.json)
+- `ask deploy`
+- start developing
 
 Deploy:
-From outside the running container:
-`docker-compose exec -w /skill/lambda hello-world-proxy npm run deploy`
-From inside:
-`cd lambda && npm run deploy`
+** Because of a bug in ask-cli 1.7.7 you cannot use npm run deploy **
+`cd lambda && npm run predeploy`
+`cd .. && ask deploy`

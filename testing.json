@@ -1,7 +1,8 @@
 {
-  "handler": "lambda/parcel/index.js",
+  "handler": "lambda/dist/index.js",
   "locales": "en-US",
   "html": "false",
+  "userId": "amzn1.ask.account.f88269f6-43df-48d7-aa65-0cf503f4887a",
   "address": {
     "addressLine1": "Bahnhofstraße 15-17",
     "city": "Wiesbaden",
@@ -9,7 +10,6 @@
     "postalCode": "65185",
     "stateOrRegion": "HE"
   },
-  "dynamo": "mock",
   "interactionModel": "models/en-US.json",
   "trace": false,
   "jest": {
@@ -17,7 +17,7 @@
     "passWithNoTests": true,
     "coverageDirectory": "test_output/coverage/",
     "coverageReporters": [
-      "json-summary", 
+      "json-summary",
       "text",
       "lcov"
     ]
