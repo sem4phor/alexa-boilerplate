@@ -1,0 +1,47 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "A template for building custom alexa skills with Typescript and parcel.",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "parcel watch src/index.ts --target node",
+    "test": "bst test",
+    "build": "NODE_ENV=production parcel build src/index.ts --target node --bundle-node-modules",
+    "lint": "eslint . --ext .ts",
+    "validate": "ask validate -l en-US",
+    "predeploy": "npm run lint && npm run build && npm run test && npm run validate",
+    "deploy": "ask deploy"
+  },
+  "author": "Smeech",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk-core": "^2.7.0",
+    "ask-sdk-dynamodb-persistence-adapter": "^2.7.0",
+    "ask-sdk-model": "^1.18.0",
+    "i18next": "^17.0.11"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "npm run lint --",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test --"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.1",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "ask-cli": "^1.7.10",
+    "bespoken-tools": "^2.3.38",
+    "eslint": "^6.1.0",
+    "husky": "^3.0.3",
+    "lint-staged": "^9.2.1",
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.5.3"
+  }
+}

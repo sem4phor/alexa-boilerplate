@@ -1,25 +1,23 @@
 {
-  "handler": "lambda/parcel/index.js",
+  "handler": "dist/index.js",
   "locales": "en-US",
   "html": "false",
+  "userId": "amzn1.ask.account.f88269f6-43df-48d7-aa65-0cf503f4887a",
   "address": {
-    "addressLine1": "Bahnhofstraße 15-17",
+    "addressLine1": "Sesamestreet 15",
     "city": "Wiesbaden",
     "countryCode": "DE",
     "postalCode": "65185",
     "stateOrRegion": "HE"
   },
-  "dynamo": "mock",
   "interactionModel": "models/en-US.json",
   "trace": false,
+  "dynamo": "mock",
   "jest": {
     "silent": false,
-    "passWithNoTests": true,
     "coverageDirectory": "test_output/coverage/",
     "coverageReporters": [
-      "json-summary", 
-      "text",
-      "lcov"
+      "json-summary"
     ]
   }
 }

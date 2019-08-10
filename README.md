@@ -4,36 +4,18 @@
 ![Coverage Statements](/badges/badge-statements.svg)
 
 Stack:
+- Framework: alexa-skill-kit for nodejs
 - Language: Typescript
 - Bundler: parcel
-- Dev Server: bespoken proxy
-- Tests: bespoken tests
-- DB: DynamoDB
+- Tests: bespoken tools
 
-Services:
-- hello-world-watch: Watches code and rebuilds it
-- hello-world-proxy: Local hosted alexa skill; Access within container: e.g. `bst launch`
-- dynamo-db: Test DB; Access on http://alexa.docker:8000/shell/
-
-// TODO:
-dynamo db anbindung testen (local)
-bst dynamo db mock testen
-
-Initial Setup:
-1. Build container:
-docker-compose build
-2. Set up ask cli in container
-docker-compose exec my-container sh
-ask init --no-browser
-follow steps
-configure your skill (skill.json)
-ask deploy
+Dependencies:
+- ask-cli (1.7.10)
 
 Development:
-docker-compose up to start parcel, bst proxy and dynamodb
+- `npm start` to watch for file changes and recompile the code automatically
+- Execute your code: `npm test`
 
 Deploy:
-From outside the running container:
-`docker-compose exec -w /skill/lambda hello-world-proxy npm run deploy`
-From inside:
-`cd lambda && npm run deploy`
+** Because of a bug in ask-cli 1.7.10 you cannot use npm run deploy yet **
+Instead use `npm run build` and then `ask deploy`

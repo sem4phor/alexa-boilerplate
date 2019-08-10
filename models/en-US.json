@@ -13,13 +13,7 @@
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "HelloWorldIntent",
-          "samples": [
-            "hello"
-          ]
+          "samples": ["Say STOP to stop"]
         }
       ]
     }

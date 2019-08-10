@@ -1,6 +1,6 @@
-lambda/node_modules
-lambda/parcel
-lambda/.cache
+node_modules
+dist
+.cache
 test_output
 bst-debug.log
 .cache
