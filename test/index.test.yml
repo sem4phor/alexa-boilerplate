@@ -3,6 +3,6 @@ configuration:
   locale: en-US
 
 ---
-- test: "Sequence 01. Test scenario: launch request, no further interaction."
+- test: "Launch Request"
 - LaunchRequest:
-  - response.outputSpeech.ssml: "<speak>Welcome to the Alexa Skills Kit, you can say hello!</speak>"
+  - response.outputSpeech.ssml: "Hello world"

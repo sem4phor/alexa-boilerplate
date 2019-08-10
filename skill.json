@@ -3,27 +3,106 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "name": "Hello World",
+          "summary": "This skill serves as a template for custom skills!",
           "examplePhrases": [
             "Alexa open hello world",
-            "hello",
-            "help"
+            "Alexa start hello world",
+            "Alexa play hello world"
           ],
-          "name": "hello-world",
-          "description": "Sample Full Description"
+          "description": "Hello world!\n\nThis skill serves as a template for custom Alexa skills!",
+          "keywords": [
+            "blueprint",
+            "template",
+            "boilerplate"
+          ],
+          "smallIconUri": "",
+          "largeIconUri": ""
+        },
+        "en-GB": {
+          "name": "Hello World",
+          "summary": "This skill serves as a template for custom skills!",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "Alexa start hello world",
+            "Alexa play hello world"
+          ],
+          "description": "Hello world!\n\nThis skill serves as a template for custom Alexa skills!",
+          "keywords": [
+            "blueprint",
+            "template",
+            "boilerplate"
+          ],
+          "smallIconUri": "",
+          "largeIconUri": ""
+        },
+        "en-IN": {
+          "name": "Hello World",
+          "summary": "This skill serves as a template for custom skills!",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "Alexa start hello world",
+            "Alexa play hello world"
+          ],
+          "description": "Hello world!\n\nThis skill serves as a template for custom Alexa skills!",
+          "keywords": [
+            "blueprint",
+            "template",
+            "boilerplate"
+          ],
+          "smallIconUri": "",
+          "largeIconUri": ""
+        },
+        "en-CA": {
+          "name": "Hello World",
+          "summary": "This skill serves as a template for custom skills!",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "Alexa start hello world",
+            "Alexa play hello world"
+          ],
+          "description": "Hello world!\n\nThis skill serves as a template for custom Alexa skills!",
+          "keywords": [
+            "blueprint",
+            "template",
+            "boilerplate"
+          ],
+          "smallIconUri": "",
+          "largeIconUri": ""
+        },
+        "en-AU": {
+          "name": "Hello World",
+          "summary": "This skill serves as a template for custom skills!",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "Alexa start hello world",
+            "Alexa play hello world"
+          ],
+          "description": "Hello world!\n\nThis skill serves as a template for custom Alexa skills!",
+          "keywords": [
+            "blueprint",
+            "template",
+            "boilerplate"
+          ],
+          "smallIconUri": "",
+          "largeIconUri": ""
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "Sample Testing Instructions.",
-      "category": "KNOWLEDGE_AND_TRIVIA",
-      "distributionCountries": []
+      "testingInstructions": "See example phrases.",
+      "category": ""
     },
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "./lambda/dist",
+          "sourceDir": "./dist",
           "uri": "ask-custom-hello-world-default"
-        }
+        },
+        "interfaces": [
+          {
+            "type": "CAN_FULFILL_INTENT_REQUEST"
+          }
+        ]
       }
     },
     "manifestVersion": "1.0"

@@ -4,30 +4,18 @@
 ![Coverage Statements](/badges/badge-statements.svg)
 
 Stack:
+- Framework: alexa-skill-kit for nodejs
 - Language: Typescript
 - Bundler: parcel
-- Dev Server: bespoken proxy
-- Tests: bespoken tests
-- DB: DynamoDB
+- Tests: bespoken tools
 
 Dependencies:
-- java (https://java.com/de/download/)
-- dynamo-db local package
-(https://docs.aws.amazon.com/de_de/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
+- ask-cli (1.7.10)
 
 Development:
-- navigate to your dynamo-db folder
-- `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb` (local dynamo-db)
-- navigate to lambda folder of your project
-- `npm start`
-- Execute your code: `npm run launch` or `npm test`
-
-Initial Setup:
-- configure your skill (skill.json)
-- `ask deploy`
-- start developing
+- `npm start` to watch for file changes and recompile the code automatically
+- Execute your code: `npm test`
 
 Deploy:
-** Because of a bug in ask-cli 1.7.7 you cannot use npm run deploy **
-`cd lambda && npm run predeploy`
-`cd .. && ask deploy`
+** Because of a bug in ask-cli 1.7.10 you cannot use npm run deploy yet **
+Instead use `npm run build` and then `ask deploy`

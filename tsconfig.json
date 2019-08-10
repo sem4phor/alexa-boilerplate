@@ -11,12 +11,12 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env",
-      "jest"
+      "jest",
+      "node"
     ],
     "paths": {
       "@/*": [
-        "lambda/*"
+        "src/*"
       ]
     },
     "lib": [
@@ -27,11 +27,7 @@
     ]
   },
   "include": [
-    "lambda/**/*.ts",
-    "lambda/**/*.tsx",
-    "lambda/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"
