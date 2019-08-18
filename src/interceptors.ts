@@ -2,8 +2,7 @@ import i18next from 'i18next'
 import i18nextConfig from './i18n'
 import * as Alexa from 'ask-sdk-core'
 import { CustomSkillRequestInterceptor } from 'ask-sdk-core/dist/dispatcher/request/interceptor/CustomSkillRequestInterceptor'
-
-const getLanguageFromLocale = (locale: string): string => locale.substr(0, 2)
+import { getLanguageFromLocale } from './service'
 
 /**
 * Initializes i18n and sets the correct locale

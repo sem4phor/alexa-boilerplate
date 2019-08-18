@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "parcel watch src/index.ts --target node",
-    "test": "bst test",
+    "test": "jest",
     "build": "NODE_ENV=production parcel build src/index.ts --target node --bundle-node-modules",
     "lint": "eslint . --ext .ts",
     "validate": "ask validate -l en-US",
@@ -33,15 +33,18 @@
     }
   },
   "devDependencies": {
+    "@types/jest": "^24.0.17",
     "@types/node": "^12.7.1",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "ask-cli": "^1.7.10",
-    "bespoken-tools": "^2.3.38",
     "eslint": "^6.1.0",
     "husky": "^3.0.3",
+    "jest": "^24.9.0",
     "lint-staged": "^9.2.1",
     "parcel-bundler": "^1.12.3",
-    "typescript": "^3.5.3"
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3",
+    "virtual-alexa": "^0.7.2"
   }
 }

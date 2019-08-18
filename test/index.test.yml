@@ -1,8 +1,0 @@
----
-configuration:
-  locale: en-US
-
----
-- test: "Launch Request"
-- LaunchRequest:
-  - response.outputSpeech.ssml: "Hello world"
