@@ -92,6 +92,13 @@
       "testingInstructions": "See example phrases.",
       "category": ""
     },
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    },
     "apis": {
       "custom": {
         "endpoint": {
